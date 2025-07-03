@@ -31,14 +31,25 @@ export default function DashboardPage() {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
     // Fetch user info
-    axios
-      .get('/dashboard/me')
-     .then((res: { data: { user: any } }) => setUser(res.data.user))
+    type User = {
+  id: string;
+  name: string;
+  email: string;
+  company_name: string;
+  industry: string;
+  industry_description: string;
+  logo?: string;
+};
+    const [user, setUser] = useState<User | null>(null);
 
-      .catch(() => {
-        localStorage.removeItem('token');
-        router.push('/login');
-      });
+   axios
+  .get('/api/dashboard/me')
+  .then((res: { data: { user: User } }) => setUser(res.data.user))
+  .catch(() => {
+    localStorage.removeItem('token');
+    router.push('/login');
+  });
+
 
     // Fetch my tenders
     axios
