@@ -3,8 +3,8 @@ import axios from 'axios';
 
 
 const instance = axios.create({
-  baseURL: 'https://b2btender-backend.onrender.com/api',
-  withCredentials: false,
+  baseURL: 'https://b2btender-backend.onrender.com',
+
 });
 
 // Add token from localStorage to every request
