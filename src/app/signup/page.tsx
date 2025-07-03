@@ -40,7 +40,7 @@ export default function SignupPage() {
     if (logo) formData.append('logo', logo);
 
     try {
-      await axios.post('/auth/signup', formData, {
+      await axios.post('https://b2btender-backend.onrender.com/api/auth/signup', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setSuccess(true);
