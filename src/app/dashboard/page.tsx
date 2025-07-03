@@ -33,7 +33,8 @@ export default function DashboardPage() {
     // Fetch user info
     axios
       .get('/dashboard/me')
-      .then((res) => setUser(res.data.user))
+     .then((res: { data: { user: any } }) => setUser(res.data.user))
+
       .catch(() => {
         localStorage.removeItem('token');
         router.push('/login');
