@@ -28,7 +28,7 @@ export default function LoginPage() {
   const onSubmit = async (data: LoginFormData) => {
     try {
       setLoading(true);
-      const res  = await axios.post('https://b2btender-backend.onrender.com/api/auth/login', data);
+      const res  = await axios.post('/auth/login', data);
 const token = res.data.token;
 
 localStorage.setItem('token', token);
