@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5000/api', // your backend base URL
+  baseURL: 'https://b2btender-backend.onrender.com/', // your backend base URL
 });
 
 // Add token from localStorage to every request
